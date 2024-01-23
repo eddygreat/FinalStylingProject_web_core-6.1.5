@@ -11,6 +11,7 @@
  button subsequently executes the needed function.
  kindly view the page on github page using the link below
  https://eddygreat.github.io/JavascriptInTheBrowser_web_core-5.1.5/
+
 Incase of any malfunction while moving from one page size to another, kindly refresh page to correct such malfunction.
 
 
@@ -18,4 +19,5 @@ Incase of any malfunction while moving from one page size to another, kindly ref
 
 the line above is used to address the error message below...
 
-'error:03000086:digital envelope routines::initialization error'
+'error:03000086:digital envelope routines::initialization error' which is caused as a result of using different versions
+ of node.
