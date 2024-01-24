@@ -1,5 +1,5 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,$font-weight,$font-weight2,700,600");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,$font-weight,$font-weight2,$font-weight3,600");
 * {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
@@ -16,6 +16,7 @@ $height: 18px;
 $height2: 16px;
 $font-weight: 400;
 $font-weight2: 500;
+$font-weight3: 700;
 $width: 100%;
 
 
@@ -282,7 +283,7 @@ ul{
 
 .order-text {
    font-family: "Roboto-Bold", Helvetica;
-   font-weight: 700;
+   font-weight: $font-weight3;
    color: $bgColor;
    font-size: 12px;
    text-align: center;
@@ -375,7 +376,7 @@ ul{
   margin-left: $height2;
   margin-right: $height2;
   font-family: "Roboto-Bold", Helvetica;
-  font-weight: 700;
+  font-weight: $font-weight3;
   color: $small-screen;
   font-size: 28px;
   letter-spacing: -0.6px;
@@ -993,7 +994,7 @@ ul{
 
 .phone-number{
    font-family: "Roboto-Bold", Helvetica;
-   font-weight: 700;
+   font-weight: $font-weight3;
    color: $small-screen;
    font-size: 24px;
    letter-spacing: -0.6px;
@@ -1023,7 +1024,7 @@ ul{
 
 .language-option:hover{
    color: #090c49;
-   font-weight: 700;
+   font-weight: $font-weight3;
    filter: contrast(80);
 
 }
@@ -1153,7 +1154,7 @@ ul{
 
 .feedback-repair{
     font-family: "Roboto-Bold", Helvetica;
-    font-weight: 700;
+    font-weight: $font-weight3;
     color: $small-screen;
     font-size: 24px;
     letter-spacing: -0.6px;
@@ -1210,7 +1211,7 @@ ul{
 
 .feedback-order-text {
    font-family: "Roboto-Bold", Helvetica;
-   font-weight: 700;
+   font-weight: $font-weight3;
    color: $bgColor;
    font-size: 12px;
    text-align: right;
@@ -1653,7 +1654,7 @@ ul{
 
 .language-option:hover{
    color: #090c49;
-   font-weight: 700;
+   font-weight: $font-weight3;
    filter: contrast(80);
 
 }

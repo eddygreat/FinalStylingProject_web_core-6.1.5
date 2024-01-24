@@ -5,12 +5,17 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 var webpack = require('webpack');
 
 module.exports = {
-  // Входной файл
+  // Input file
   entry: [
-    "webpack-dev-server/client?http://127.0.0.0:8080/",
-    "webpack/hot/only-dev-server",
+    'webpack-dev-server/client?http://127.0.0.0:8080/',
+    'webpack/hot/only-dev-server',
     './src/js/index.js'
   ],
+
+  devServer: {
+    allowedHosts: ['all'],
+    overlay: true,
+  },
 
   // entry: [
   //  "webpack-dev-server/client?http://127.0.0.0:8080",
@@ -18,17 +23,17 @@ module.exports = {
   //  "./src"
   //],
 
-  // Выходной файл
+  //Output file
   output: {
     filename: './js/bundle.js'
   },
 
-  // Source maps для удобства отладки
-  devtool: "source-map",
+  // Source maps for ease of debugging
+  devtool: 'source-map',
 
   module: {
     rules: [
-      // Транспилируем js с babel
+      //Transpiling js with babel
       {
         test: /\.js$/,
         include: path.resolve(__dirname, 'src/js'),
@@ -36,68 +41,68 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'],
+            presets: ['@babel/preset-env']
           }
         }
       },
 
-      // Компилируем SCSS в CSS
+      // Compiling SCSS to CSS
       {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader, // Extract css to separate file
           'css-loader', // translates CSS into CommonJS
           'postcss-loader', // parse CSS and add vendor prefixes to CSS rules
-          'sass-loader', // compiles Sass to CSS, using Node Sass by default
-        ],
+          'sass-loader' // compiles Sass to CSS, using Node Sass by default
+        ]
       },
 
-      // Подключаем шрифты из css
       {
         test: /\.(eot|ttf|woff|woff2)$/,
         use: [
           {
             loader: 'file-loader?name=./fonts/[name].[ext]'
-          },
+          }
         ]
       },
 
-      // Подключаем картинки из css
+      // Connect images from css
       {
         test: /\.(svg|png|jpg|jpeg|webp)$/,
         use: [
           {
             loader: 'file-loader?name=./static/[name].[ext]'
-          },
+          }
         ]
-      },
-    ],
+      }
+    ]
   },
   plugins: [
-    // Подключаем файл html, стили и скрипты встроятся автоматически
+    //We connect the html file, styles and scripts will be built in automatically
+
     new HtmlWebpackPlugin({
       title: 'Webpack 4 Starter',
       template: './src/index.html',
       inject: true,
       minify: {
         removeComments: true,
-        collapseWhitespace: false,
+        collapseWhitespace: false
       }
     }),
 
-    // Кладем стили в отдельный файлик
+    //We put the styles in a separate file
     new MiniCssExtractPlugin({
-      filename: 'style.css',
+      filename: 'style.css'
     }),
 
-    // Копируем картинки
+    // Copying pictures
     new CopyWebpackPlugin([
       {
         from: './src/img',
-        to: 'img',
-      },
+        to: 'img'
+      }
     ]),
 
-    new webpack.HotModuleReplacementPlugin() 
-  ],
-};
+    new webpack.HotModuleReplacementPlugin()
+  ]
+}
