@@ -6,17 +6,17 @@ var webpack = require('webpack');
 
 module.exports = {
   // Входной файл
-  //entry: [
-  //  "webpack-dev-server/client?http://127.0.0.0:8080/",
-  //  "webpack/hot/only-dev-server",
-  //  './src/js/index.js'
-  //],
-
-   entry: [
-    "webpack-dev-server/client?http://127.0.0.0:8080",
+  entry: [
+    "webpack-dev-server/client?http://127.0.0.0:8080/",
     "webpack/hot/only-dev-server",
-    "./src"
+    './src/js/index.js'
   ],
+
+  // entry: [
+  //  "webpack-dev-server/client?http://127.0.0.0:8080",
+  //  "webpack/hot/only-dev-server",
+  //  "./src"
+  //],
 
   // Выходной файл
   output: {
