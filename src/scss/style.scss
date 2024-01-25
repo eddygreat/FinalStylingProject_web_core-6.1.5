@@ -2112,8 +2112,7 @@ margin-right: auto;
 
 //feedback
 .bigger-view, .call-bigger-view, .call-order{
-    min-width: 1120px;
-    max-width: 1920px;
+    width: 100%;
     flex-direction: row;
     z-index: 20;
     position: fixed;
@@ -2178,6 +2177,19 @@ margin-right: auto;
    height: 100%;
 }
 
+ .active.call-bigger-view, .active.bigger-view{
+     
+    background-color: $bgColor;
+    pointer-events: fill;
+    display: flex;
+    max-width: 1920px;
+    background-color: #ffffff;
+    margin-right: auto;
+    margin-left: auto;
+    position: fixed;
+    left: auto;
+    
+}
 
 }
 
