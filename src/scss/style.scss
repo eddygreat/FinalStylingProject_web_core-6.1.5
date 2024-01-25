@@ -2112,7 +2112,8 @@ margin-right: auto;
 
 //feedback
 .bigger-view, .call-bigger-view, .call-order{
-    width: 100svw;
+    min-width: 1120px;
+    max-width: 1920px;
     flex-direction: row;
     z-index: 20;
     position: fixed;
